@@ -36,7 +36,7 @@ def fix_folders_images_extensions(
         file_extension_detected: str = f".{possible_extension}"
         if image.suffix != file_extension_detected:
             if not dry:
-                image.rename(image.with_suffix(f".{file_extension_detected}"))
+                image.rename(image.with_suffix(file_extension_detected))
             edited_files_count += 1
             edited_files.append(image)
 
