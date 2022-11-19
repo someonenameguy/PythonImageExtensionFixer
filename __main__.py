@@ -31,10 +31,8 @@ for path in args.folders:
         collected_edits.edited_files + edits.edited_files
     )
 
+print(f"Total files edited: {edits.number_of_edits}")
+
 if args.dry_run:
-    print(f"Total files edited: {edits.number_of_edits}")
     print("Edited:", *edits.edited_files, sep="\n")
 
-else:
-    edits: FilesEditionResult = fix_folders_images_extensions(args.folders)
-    print(f"Total files edited: {edits.number_of_edits}")
