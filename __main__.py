@@ -11,12 +11,12 @@ parser = ArgumentParser(
 parser.add_argument(
     "--folders", "-f", action="store", dest="folders",
     type=Path, required=True, nargs='+',
-    help="Sets path to config file to launch Gaby with"
+    help="List folders that you want to fix images extensions of"
 )
 parser.add_argument(
     "--dry", "-dry", action="store_true", dest="dry_run",
     required=False, default=False,
-    help="Sets path to config file to launch Gaby with"
+    help="Runs program without renaming files on disk to see if everything is fine"
 )
 
 args, unknown = parser.parse_known_args()

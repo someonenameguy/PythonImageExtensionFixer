@@ -36,7 +36,12 @@ def fix_folders_images_extensions(
         file_extension_detected: str = f".{possible_extension}"
         if image.suffix != file_extension_detected:
             if not dry:
-                image.rename(image.with_suffix(file_extension_detected))
+                try:
+                    image.rename(image.with_suffix(file_extension_detected))
+
+                except FileExistsError:
+                    continue
+
             edited_files_count += 1
             edited_files.append(image)
 
